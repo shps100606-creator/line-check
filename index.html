@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>正在前往合約簽署...</title>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+    <h2 style="text-align:center; margin-top: 50px;">系統讀取中，請稍候...</h2>
+    <script>
+        // ▼▼▼ 請修改這裡的兩個資料 ▼▼▼
+        const MY_LIFF_ID = 2008825087-brl3NoSr;  
+        const MY_FORM_URL = https://www.jotform.com/form/253423571009048; 
+        // ▲▲▲ 修改上面就好，下面不要動 ▲▲▲
+
+        async function main() {
+            await liff.init({ liffId: MY_LIFF_ID });
+            if (!liff.isLoggedIn()) {
+                liff.login();
+            } else {
+                const profile = await liff.getProfile();
+                const userId = profile.userId; 
+                
+                // 這裡假設你在 JotForm 的隱藏欄位名稱叫做 lineid
+                // 如果你的欄位名稱不一樣，請把 ?lineid= 改成 ?你的名稱=
+                window.location.href = MY_FORM_URL + "?lineid=" + userId;
+            }
+        }
+        main();
+    </script>
+</body>
+</html>
