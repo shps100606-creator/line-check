@@ -19,7 +19,8 @@
 ```text
 .
 ├── index.html                 # 唯一網站 source；HTML、CSS、JavaScript 共置
-└── CODEBASE-STRUCTURE.md
+├── CODEBASE-STRUCTURE.md     # 程式碼結構與責任邊界的 canonical 文件
+└── CLAUDE.md                 # 專案入口與 CodeMap 更新責任
 ```
 
 ## 模組地圖
